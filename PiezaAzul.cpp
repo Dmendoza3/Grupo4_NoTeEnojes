@@ -11,7 +11,7 @@ void PiezaAzul::ingresarTablero(char** tablero){
 }
 void PiezaAzul::ingresarZonaFinal(char** tablero){
 	if(tablero[this->getX()][this->getY()]=='A'){
-		this->esZonaFinal();
+		this->estaFinal();
 	}
 }
 void PiezaAzul::comer(char**){

@@ -10,7 +10,7 @@ PiezaAmarilla::PiezaAmarilla(char** tablero):Pieza(14 , 0 , 'y' ){
 	
  void PiezaAmarilla::ingresarZonaFinal(char** tablero){
 	if(tablero[this->getX()][this->getY()]=="Y"){
-		this->esZonaFinal();
+		this->estaFinal();
 	}
 }
  void PiezaAmarilla::comer(char**){
