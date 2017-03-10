@@ -6,14 +6,14 @@ PiezaAzul::PiezaAzul():Pieza(14 , 14 , 'a'){
 
 virtual void PiezaAzul::ingresarTablero(char** tablero, int tirada){
 	if(tirada == 2){
-		tablero[getx()][getY()] = getColor;
+		tablero[this->getX()][this->getY()] = this->getColor();
 	}else if(tirada == 12){
-		tablero[getx()][getY()] = getColor;
+		tablero[this->getX()][this->getY()] = this->getColor();
 	}
 }
 virtual void PiezaAzul::ingresarZonaFinal(char** tablero){
-	if(tablero[getX()][getY()]=="A"){
-		esZonaFinal();
+	if(tablero[this->getX()][this->getY()]=='A'){
+		this->esZonaFinal();
 	}
 }
 virtual void PiezaAzul::comer(char**){

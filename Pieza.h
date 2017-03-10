@@ -1,12 +1,16 @@
-class Pieza
-{
+#pragma once
+#include <iostream>
+
+ using namespace std;
+
+class Pieza{
 private:	
 	int x;
 	int y;
 	char color;
 	bool zonaFinal;
 public:
-	Pieza(int , int, char pcolor);
+	Pieza(int , int, char );
 	
 	void setX(int);
 	void setY(int);
@@ -16,9 +20,9 @@ public:
 	int getY();
 	char getColor();
 	bool esZonalFinal();
-	void estaFinal(bool);
+	void estaFinal();
 
-	virtual void ingresarTablero(char**);
+	virtual void ingresarTablero(char** ,int);
 	virtual void ingresarZonaFinal(char**);
 	virtual void comer(char**);
 
