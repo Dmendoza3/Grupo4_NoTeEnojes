@@ -5,7 +5,7 @@ class PiezaVerde:public Pieza
 {
 public:
 	PiezaVerde(char**);
-	
+	~PiezaVerde();	
 		
 	virtual void ingresarTablero(char**);
 	virtual void ingresarZonaFinal(char**);

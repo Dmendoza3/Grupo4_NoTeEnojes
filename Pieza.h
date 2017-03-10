@@ -11,7 +11,7 @@ private:
 	bool zonaFinal;
 public:
 	Pieza(int , int, char );
-	
+	virtual ~Pieza();
 	void setX(int);
 	void setY(int);
 	void setColor(char);

@@ -1,4 +1,7 @@
 #include "PiezaAmarilla.h"
+PiezaAmarilla::~PiezaAmarilla(){
+	
+}
 
 PiezaAmarilla::PiezaAmarilla(char** tablero):Pieza(14 , 0 , 'y' ){
 	this->ingresarTablero(tablero);
