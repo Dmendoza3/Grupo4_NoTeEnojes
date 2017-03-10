@@ -9,7 +9,7 @@ void PiezaRoja::ingresarTablero(char** tablero){
 }
 void PiezaRoja::ingresarZonaFinal(char** tablero){
 	if(tablero[this->getX()][this->getY()]=='R'){
-		this->esZonaFinal();
+		this->estaFinal();
 	}
 }
 void PiezaRoja::comer(char**){
