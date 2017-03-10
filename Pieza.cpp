@@ -134,7 +134,7 @@ void Pieza::mover(int pos , char** tablero ){
 	}
 }
 
-bool Pieza::esZonalFinal(){
+bool Pieza::esZonaFinal(){
 	return zonaFinal;
 }
 void Pieza::estaFinal(){	

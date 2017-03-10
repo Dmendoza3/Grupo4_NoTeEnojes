@@ -19,7 +19,7 @@ public:
 	int getX();
 	int getY();
 	char getColor();
-	bool esZonalFinal();
+	bool esZonaFinal();
 	void estaFinal();
 
 	virtual void ingresarTablero(char** ,int);
