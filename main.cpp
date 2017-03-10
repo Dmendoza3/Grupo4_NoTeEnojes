@@ -13,6 +13,11 @@ class jugador
 	public:
 		int color;
 		vector<Pieza> piezas;
+		~jugador()
+		{
+			delete[] piezas;
+			piezas.clear();
+		}
 };
 
 void iniciarTablero(char**);
