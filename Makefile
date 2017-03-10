@@ -1,8 +1,8 @@
-main: Pieza.o PiezaVerde.o  PiezaRoja.o PiezaAmarilla.o PiezaAzul main.o
+main: Pieza.o PiezaVerde.o  PiezaRoja.o PiezaAmarilla.o PiezaAzul.o main.o
 	g++ Pieza.o PiezaVerde.o main.o -o main -lncurses
 
 main.o:	main.cpp Pieza.h PiezaVerde.h PiezaRoja.h PiezaAmarilla.h PiezaAzul.h
-	g++ -c main.cpp 
+	g++ -c main.cpp Pieza.h PiezaVerde.h PiezaRoja.h PiezaAmarilla.h PiezaAzul.h
 
 PiezaVerde.o:	PiezaVerde.h Pieza.h PiezaVerde.cpp
 	g++	-c PiezaVerde.cpp

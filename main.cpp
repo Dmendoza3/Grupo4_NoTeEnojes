@@ -12,10 +12,11 @@ class jugador
 {
 	public:
 		int color;
-		vector<Pieza> piezas;
+		vector<Pieza*> piezas;
 		~jugador()
 		{
-			delete[] piezas;
+			for(int i = 0; i < piezas.size(); i++)
+				delete[] piezas[i];
 			piezas.clear();
 		}
 };
