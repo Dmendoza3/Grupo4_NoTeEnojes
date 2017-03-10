@@ -6,6 +6,6 @@ using namespace std;
 
 int main()
 {
-	cout << typeid(int).name();
+	cout << ((int)'5' - 48);
 	return 0;
 }
