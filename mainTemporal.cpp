@@ -19,7 +19,7 @@ int main(){
 
 	Pieza* pieza =new PiezaVerde();
 
-	pieza->mover(20 , tablero);
+	pieza->mover(42 , tablero);
 
 	for (int i = 0; i < 15; ++i)
 	{
