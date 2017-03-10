@@ -1,7 +1,7 @@
 #include "PiezaAmarilla.h"
 
 PiezaAmarilla::PiezaAmarilla(char** tablero):Pieza(14 , 0 , 'y' ){
-	this->ingresarTablero(tablero)
+	this->ingresarTablero(tablero);
 }
 
  void PiezaAmarilla::ingresarTablero(char** tablero){
