@@ -1,6 +1,6 @@
 #pragma once
 #include "Pieza.h"
- class PiezaAmarilla
+ class PiezaAmarilla : public Pieza
  {
  public:
  	PiezaAmarilla(char**);
