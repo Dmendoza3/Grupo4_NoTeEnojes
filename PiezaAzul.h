@@ -3,10 +3,10 @@
 class PiezaAzul: public Pieza
 {
 public:
-	PiezaAzul(char);
+	PiezaAzul(char**);
 	
 
-	virtual void ingresarTablero(char** int);
+	virtual void ingresarTablero(char** );
 	virtual void ingresarZonaFinal(char**);
 	virtual void comer(char**);
 
