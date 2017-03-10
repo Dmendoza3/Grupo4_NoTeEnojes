@@ -1,5 +1,7 @@
 #include "PiezaVerde.h"
-
+PiezaVerde::~PiezaVerde(){
+	
+}
 PiezaVerde::PiezaVerde(char** tablero):Pieza(0 , 0 , 'v'){
 	this->ingresarTablero(tablero);
 }

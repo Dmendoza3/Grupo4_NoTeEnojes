@@ -1,5 +1,7 @@
 #include "PiezaRoja.h"
-
+PiezaRoja::~PiezaRoja(){
+	
+}
 PiezaRoja::PiezaRoja(char** tablero):Pieza(0 , 14 , 'r'){
 	this->ingresarTablero(tablero);
 }
