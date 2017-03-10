@@ -1,7 +1,7 @@
 main: Pieza.o PiezaVerde.o  PiezaRoja.o PiezaAmarilla.o PiezaAzul main.o
 	g++ Pieza.o PiezaVerde.o main.o -o main -lncurses
 
-main.o:	main.cpp Pieza.h PiezaVerde.h
+main.o:	main.cpp Pieza.h PiezaVerde.h PiezaRoja.h PiezaAmarilla.h PiezaAzul.h
 	g++ -c main.cpp 
 
 PiezaVerde.o:	PiezaVerde.h Pieza.h PiezaVerde.cpp
