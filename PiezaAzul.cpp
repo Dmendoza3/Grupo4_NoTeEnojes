@@ -11,9 +11,12 @@ virtual void PiezaAzul::ingresarTablero(char** tablero, int tirada){
 		tablero[getx()][getY()] = getColor;
 	}
 }
-virtual void PiezaAzul::ingresarZonaFinal(char**){
-	
+virtual void PiezaAzul::ingresarZonaFinal(char** tablero){
+	if(tablero[getX()][getY()]=="A"){
+		esZonaFinal();
+	}
 }
 virtual void PiezaAzul::comer(char**){
-
+	
 }
+

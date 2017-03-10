@@ -11,12 +11,12 @@ public:
 	void setX(int);
 	void setY(int);
 	void setColor(char);
-	void estaFinal();
 	
 	int getX();
 	int getY();
 	char getColor();
 	bool esZonalFinal();
+	void estaFinal(bool);
 
 	virtual void ingresarTablero(char**);
 	virtual void ingresarZonaFinal(char**);

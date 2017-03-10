@@ -5,6 +5,7 @@ Pieza::Pieza(int px ,int py , char pcolor){
 	x = px;
 	y = py;
 	color = pcolor;
+	zonaFinal = false;
 }
 
 void Pieza::setX(int pX){
@@ -36,4 +37,12 @@ void mover(int pos , char** tablero ){
 
 	}*/
 }
+
+bool esZonalFinal(){
+	zonaFinal = true;
+}
+void estaFinal(bool){	
+	return zonaFinal;
+}
+
 

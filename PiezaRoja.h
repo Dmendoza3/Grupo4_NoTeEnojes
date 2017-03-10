@@ -1,12 +1,12 @@
 #include <Pieza.h>
-class PiezaAzul: public Pieza
+class PiezaRoja
 {
 public:
-	PiezaAzul(char);
-	
+	PiezaRoja();
+	~PiezaRoja();
 
 	virtual void ingresarTablero(char**);
 	virtual void ingresarZonaFinal(char**);
 	virtual void comer(char**);
-
+	
 };
