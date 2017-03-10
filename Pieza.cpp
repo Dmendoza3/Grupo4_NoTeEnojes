@@ -6,6 +6,7 @@ Pieza::Pieza(int px ,int py , char pcolor){
 	y = py;
 	color = pcolor;
 	zonaFinal = false;
+	
 }
 
 void Pieza::setX(int pX){

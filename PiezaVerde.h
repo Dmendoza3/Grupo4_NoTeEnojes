@@ -4,10 +4,10 @@
 class PiezaVerde:public Pieza
 {
 public:
-	PiezaVerde();
+	PiezaVerde(char**);
 	
 		
-	virtual void ingresarTablero(char** , int);
+	virtual void ingresarTablero(char**);
 	virtual void ingresarZonaFinal(char**);
 	virtual void comer(char**);	
 };

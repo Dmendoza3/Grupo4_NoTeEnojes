@@ -1,15 +1,11 @@
 #include "PiezaVerde.h"
 
-PiezaVerde::PiezaVerde():Pieza(0 , 0 , 'v'){
-	
+PiezaVerde::PiezaVerde(char** tablero):Pieza(0 , 0 , 'v'){
+	this->ingresarTablero(tablero);
 }
 
-void PiezaVerde::ingresarTablero(char** tablero, int tirada){
-	if(tirada == 2){
-		tablero[this->getX()][this->getY()] = this->getColor();
-	}else if(tirada == 12){
-		tablero[this->getX()][this->getY()] = this->getColor();
-	}
+void PiezaVerde::ingresarTablero(char** tablero){
+	tablero[0][0] = this->getColor();
 }
 
 void PiezaVerde::ingresarZonaFinal(char** tablero){

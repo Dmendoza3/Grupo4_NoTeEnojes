@@ -1,15 +1,13 @@
 #include "PiezaAmarilla.h"
 
-PiezaAmarilla::PiezaAmarilla():Pieza(14 , 0 , 'y'){
+PiezaAmarilla::PiezaAmarilla(char** tablero):Pieza(14 , 0 , 'y' ){
+	this->ingresarTablero(tablero)
 }
 
-virtual void PiezaAmarilla::ingresarTablero(char** tablero, int tirada){
-	if(tirada == 2){
-		tablero[this->getx()][this->getY()] = this->getColor();
-	}else if(tirada == 12){
-		tablero[this->getx()][this->getY()] = this->getColor();
-	}
+virtual void PiezaAmarilla::ingresarTablero(char** tablero){
+		tablero[14][0] = this->getColor();
 }
+	
 virtual void PiezaAmarilla::ingresarZonaFinal(char** tablero){
 	if(tablero[this->getX()][this->getY()]=="Y"){
 		this->esZonaFinal();
