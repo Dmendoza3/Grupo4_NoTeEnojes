@@ -36,7 +36,8 @@ int main()
 	srand ((unsigned)time(NULL));
 
 	initscr();
-	
+	start_color();	
+
     keypad(stdscr, TRUE);
 
 	jugador j1,j2;
@@ -85,15 +86,14 @@ int main()
 		else
 			printw("Jugador 2 Lanza el dado\n");
 		
+		int di = dados();
+	
 		getch();	
 		
 		
 		clear();
 		refresh();
 	}
-
-	echo();
-	getch();
 	
 	endwin();
 
@@ -135,6 +135,10 @@ void iniciarTablero(char** tablero)
 	}
 	
 	tablero[7][7] = 'M';
+	tablero[0][14] = 'R';
+	tablero[14][0] = 'Y';
+	tablero[0][0] = 'V';
+	tablero[14][14] = 'A';
 }
 
 void imprimirTablero(char** tablero)
@@ -142,16 +146,69 @@ void imprimirTablero(char** tablero)
 	int r, c;
 	getmaxyx(stdscr, r, c);
 
+	init_pair(0,COLOR_WHITE,COLOR_BLACK);
+	init_pair(1,COLOR_CYAN,COLOR_BLACK);
+	init_pair(2,COLOR_RED,COLOR_BLACK);
+	init_pair(3,COLOR_BLUE,COLOR_BLACK);
+	init_pair(4,COLOR_YELLOW,COLOR_BLACK);
+	init_pair(5,COLOR_GREEN,COLOR_BLACK);
+
 	//mvprintw(row/2, (col - mesg.size())/2, "%s", mesg);
 	for(int row = 0; row < 15; row++)
 	{	
 		//string line = "";
 		for(int col = 0; col < 15; col++)
 		{	
-			mvprintw((r/2) + row - 7, (c/2) + col - 7, "%c", tablero[row][col]);	
+			refresh();
+			switch(tablero[row][col])
+			{
+				case 'R':{
+					attron(COLOR_PAIR(2));
+					break;}
+				case 'A':{
+					attron(COLOR_PAIR(3));
+					break;}
+				case 'Y':{
+					attron(COLOR_PAIR(4));
+					break;}
+				case 'V':{
+					attron(COLOR_PAIR(5));
+					break;}
+				case 'g':{
+					attron(COLOR_PAIR(1));
+					break;}
+				case 'w':{
+					attron(COLOR_PAIR(0));
+					break;}
+					
+			}
+//			mvprintw((r/2) + row - 7, (c/2) + col - 7, "%c", tablero[row][col]);
+			printw("[ ]");
 			//line += "# ";
+			switch(tablero[row][col])
+			{
+				case 'R':{
+					attroff(COLOR_PAIR(2));
+					break;}
+				case 'A':{
+					attroff(COLOR_PAIR(3));
+					break;}
+				case 'Y':{
+					attroff(COLOR_PAIR(4));
+					break;}
+				case 'V':{
+					attroff(COLOR_PAIR(5));
+					break;}
+				case 'g':{
+					attroff(COLOR_PAIR(1));
+					break;}
+				case 'w':{
+					attroff(COLOR_PAIR(0));
+					break;}
+			}
 		}
-		
+		printw("\n");
+		refresh();
 	}
 }
 
@@ -159,11 +216,3 @@ int dados()
 {
 	return (rand() % 6) + (rand() % 6);
 }
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
