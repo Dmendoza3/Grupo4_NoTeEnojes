@@ -1,12 +1,5 @@
 //Pieza
 #include "Pieza.h"
-<<<<<<< HEAD
-=======
-Pieza::~Pieza(){
-
-}
->>>>>>> ac224ca13dc2f39a2048518511594bdde8f37846
-
 Pieza::Pieza(int px ,int py , char pcolor){	
 	x = px;
 	y = py;
@@ -47,7 +40,7 @@ void Pieza::mover(int pos , char** tablero ){
 	//Si esta en la linea superior
 	if(this->zonaFinal){
 		if(this->getColor() == 'a'){
-			this->setY(pos - this-getY());								
+			this->setY(pos - this->getY());								
 		}else if(this->getColor() == 'r'){	
 			this->setX(pos + this->getX());	
 		}else if(this->getColor() == 'y'){
