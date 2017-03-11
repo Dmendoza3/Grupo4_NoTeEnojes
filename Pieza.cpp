@@ -1,7 +1,7 @@
 //Pieza
 #include "Pieza.h"
 Pieza::~Pieza(){
-	
+
 }
 
 Pieza::Pieza(int px ,int py , char pcolor){	
@@ -38,101 +38,113 @@ char Pieza::getColor(){
 
 void Pieza::mover(int pos , char** tablero ){ 
 	//Si esta en la linea superior
-	cout<<"Posicion "<<pos<<endl;
-	cout<<"entro"<<endl;	
-	if(this->getX()==0 && this->getY()<14){
-		cout<<"entro Validacion"<<endl;
+	if(this->zonaFinal){
+		if(this->getColor() == 'a'){
+			this->setY(pos - this-getY());								
+		}else if(this->getColor() == 'r'){	
+			this->setX(pos + this->getX());	
+		}else if(this->getColor() == 'y'){
+			this->setY(pos - this->getY());
+		}else if(this->getColor() == 'v'){
+			this->setX(pos + this->getX());
+		}	
+	}else{
+		cout<<"Posicion "<<pos<<endl;
+		cout<<"entro"<<endl;	
+		if(this->getX()==0 && this->getY()<14){
+			cout<<"entro Validacion"<<endl;
 		//Si el valor es mayor
-		if(pos+this->getY()>=14){
-			cout<<"entro Recursiva"<<endl;
-			int sobra = pos-14;
-			cout<<"SObra"<<sobra;
+			if(pos+this->getY()>=14){
+				cout<<"entro Recursiva"<<endl;
+				int sobra = pos-14;
+				cout<<"SObra"<<sobra;
 			//Borra y cambia
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setY(14);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			if(sobra<0){
-				this->mover(-sobra , tablero);
-			}else{
-				this->mover(sobra , tablero);
-			}
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setY(14);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				if(sobra<0){
+					this->mover(-sobra , tablero);
+				}else{
+					this->mover(sobra , tablero);
+				}
 
-		}else{
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setY(pos+this->getY());
-			tablero[this->getX()][this->getY()] = this->getColor();
-			cout<<"entro Normal"<<endl;
-		}
+			}else{
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setY(pos+this->getY());
+				tablero[this->getX()][this->getY()] = this->getColor();
+				cout<<"entro Normal"<<endl;
+			}
 
 	//Si esta en la linea lateral derecha	
-	}else if(this->getY()==14 && this->getX()<14 ){
+		}else if(this->getY()==14 && this->getX()<14 ){
 		//cout<<"entro Validacion"<<endl;
-		
-		if(pos+this->getX()>=14){
+
+			if(pos+this->getX()>=14){
 		//	cout<<"entro Recursiva"<<endl;
-			int sobra = pos-14;
+				int sobra = pos-14;
 			//Borra y cambia
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setX(14);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			if(sobra<0){
-				this->mover(-sobra , tablero);
-			}else{
-				this->mover(sobra , tablero);
-			}
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setX(14);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				if(sobra<0){
+					this->mover(-sobra , tablero);
+				}else{
+					this->mover(sobra , tablero);
+				}
 
-		}else{
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setX(pos+this->getX());
-			tablero[this->getX()][this->getY()] = this->getColor();
-			cout<<"entro Normal"<<endl;
-		}
+			}else{
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setX(pos+this->getX());
+				tablero[this->getX()][this->getY()] = this->getColor();
+				cout<<"entro Normal"<<endl;
+			}
 	//Si esta en la liena inferior	
-	}else if(this->getX()==14 && this->getY()> 0){
+		}else if(this->getX()==14 && this->getY()> 0){
 		//Si el valor es mayor
-		if(this->getY()-pos<=0){
-			cout<<"entro Recursiva"<<endl;
-			int sobra = pos-14;
-			cout<<"SObra"<<sobra<<endl;
+			if(this->getY()-pos<=0){
+				cout<<"entro Recursiva"<<endl;
+				int sobra = pos-14;
+				cout<<"SObra"<<sobra<<endl;
 			//Borra y cambia
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setY(0);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			if(sobra<0){
-				this->mover(-sobra , tablero);
-			}else{
-				this->mover(sobra , tablero);
-			}
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setY(0);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				if(sobra<0){
+					this->mover(-sobra , tablero);
+				}else{
+					this->mover(sobra , tablero);
+				}
 
-		}else{
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setY(this->getY()-pos);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			cout<<"entro Normal"<<endl;
-		}
+			}else{
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setY(this->getY()-pos);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				cout<<"entro Normal"<<endl;
+			}
 
 	//Si esta en la linea lateral izquierda	
-	}else if(this->getY()==0 && this->getX()>0){
+		}else if(this->getY()==0 && this->getX()>0){
 		//cout<<"entro Validacion"<<endl;
-		
-		if(this->getX()-pos<=0){
-		//	cout<<"entro Recursiva"<<endl;
-			int sobra = pos-14;
-			//Borra y cambia
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setX(0);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			if(sobra<0){
-				this->mover(-sobra , tablero);
-			}else{
-				this->mover(sobra , tablero);
-			}
 
-		}else{
-			tablero[this->getX()][this->getY()]= 'w';
-			this->setX(this->getX()-pos);
-			tablero[this->getX()][this->getY()] = this->getColor();
-			cout<<"entro Normal"<<endl;
+			if(this->getX()-pos<=0){
+		//	cout<<"entro Recursiva"<<endl;
+				int sobra = pos-14;
+			//Borra y cambia
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setX(0);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				if(sobra<0){
+					this->mover(-sobra , tablero);
+				}else{
+					this->mover(sobra , tablero);
+				}
+
+			}else{
+				tablero[this->getX()][this->getY()]= 'w';
+				this->setX(this->getX()-pos);
+				tablero[this->getX()][this->getY()] = this->getColor();
+				cout<<"entro Normal"<<endl;
+			}
 		}
 	}
 }

@@ -12,7 +12,7 @@ void PiezaAmarilla::ingresarTablero(char** tablero){
 }
 
 void PiezaAmarilla::ingresarZonaFinal(char** tablero){
-	if(tablero[this->getX()][this->getY()]=='Y'){
+	if(tablero[this->getX()][this->getY()]=='Y' ){
 		this->esZonaFinal();
 	}
 }
