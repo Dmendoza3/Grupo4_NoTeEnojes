@@ -4,7 +4,7 @@ class PiezaAmarilla : public Pieza
 {
 public:
 	PiezaAmarilla(char**);
-	~PiezaAmarilla();
+	~PiezaAmarilla(){}
 
 	virtual void ingresarTablero(char** );
 	virtual void ingresarZonaFinal(char**);

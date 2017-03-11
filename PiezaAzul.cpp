@@ -1,8 +1,5 @@
 //PiezaAzul
 #include "PiezaAzul.h"
-PiezaAzul::~PiezaAzul(){
-	
-}
 
 PiezaAzul::PiezaAzul(char** tablero):Pieza(14 , 14 , 'a'){
 	this->ingresarTablero(tablero);

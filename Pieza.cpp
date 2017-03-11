@@ -1,8 +1,5 @@
 //Pieza
 #include "Pieza.h"
-Pieza::~Pieza(){
-	
-}
 
 Pieza::Pieza(int px ,int py , char pcolor){	
 	x = px;
@@ -11,6 +8,10 @@ Pieza::Pieza(int px ,int py , char pcolor){
 	zonaFinal = false;
 	
 }
+
+/*Pieza::~Pieza() {
+
+}*/
 
 void Pieza::setX(int pX){
 	x = pX;

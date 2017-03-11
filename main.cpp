@@ -6,6 +6,12 @@
 #include <typeinfo>
 #include <vector>
 
+#include "Pieza.h"
+#include "PiezaAzul.h"
+#include "PiezaAmarilla.h"
+#include "PiezaRoja.h"
+#include "PiezaVerde.h"
+
 using namespace std;
 
 class jugador
@@ -30,7 +36,7 @@ int main()
 	srand ((unsigned)time(NULL));
 
 	initscr();
-	raw();
+	
     keypad(stdscr, TRUE);
 
 	jugador j1,j2;
@@ -86,7 +92,7 @@ int main()
 		refresh();
 	}
 
-		
+	echo();
 	getch();
 	
 	endwin();
