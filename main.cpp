@@ -78,22 +78,19 @@ int main()
 	turno = 1;
 
 	//Comenzar juego
-	while(true)
-	{
-		imprimirTablero(tablero);
-		if(turno = 1)
-			printw("Jugador 1 Lanza el dado\n");
-		else
-			printw("Jugador 2 Lanza el dado\n");
-		
-		int di = dados();
+	imprimirTablero(tablero);
+	if(turno = 1)
+		printw("Jugador 1 Lanza el dado\n");
+	else
+		printw("Jugador 2 Lanza el dado\n");
 	
-		getch();	
-		
-		
-		clear();
-		refresh();
-	}
+	int di = dados();
+
+	getch();	
+	
+	
+	clear();
+	refresh();
 	
 	endwin();
 
